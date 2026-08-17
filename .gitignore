@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+*.png
+
+# NEVER commit licensed market data.
+data/
+*.csv
+
+# NOTE: TRIALS.jsonl is deliberately NOT ignored. The trial count is part of
+# the honesty record - a log you can silently wipe is not a log.

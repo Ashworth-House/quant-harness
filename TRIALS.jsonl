@@ -1,0 +1,2 @@
+{"timestamp": "2026-08-17T12:40:52.631238+00:00", "family": "ma_crossover", "strategy": "ma_crossover[SYNTH,50/200]", "sizer": "fixed[1]", "dataset": "trending (synthetic, seed=42, 2500d)", "sharpe": -0.180798}
+{"timestamp": "2026-08-17T12:41:05.221322+00:00", "family": "ma_crossover", "strategy": "ma_crossover[SYNTH,50/200]", "sizer": "fixed[1]", "dataset": "noise (synthetic, seed=3, 2500d)", "sharpe": 0.099046}
