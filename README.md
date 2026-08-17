@@ -111,6 +111,7 @@ make the tests pass.
 | M4 | Metrics and one-command report | ✅ |
 | M5 | MA crossover visibly loses after costs | ✅ |
 | **M6** | **Random null distribution** | **Stub — co-founder** |
+| **K1–K3** | **Known-answer tests — validate the instrument** | **Next, and before any real hypothesis** |
 | M7 | Walk-forward with purging and embargo | Not started |
 | M8 | Deflated Sharpe using the trial count | Not started |
 | M9 | Pre-registration workflow | Log started |
@@ -119,3 +120,33 @@ make the tests pass.
 Until M6, M7 and M8 exist, **every report says so on its face**. A Sharpe ratio
 with no null distribution behind it is not evidence, and the report refuses to
 pretend otherwise.
+
+---
+
+## Known-answer tests (K1–K3)
+
+Before any real hypothesis, run three strategies whose answer the literature
+already knows. **A harness that reports positive net alpha for weekly short-term
+reversal is a harness that will approve anything you feed it.**
+
+| | Test | Expected | Diagnoses |
+|---|---|---|---|
+| K1 | Volatility-managed exposure beats unmanaged out-of-sample | **REJECT** | Walk-forward leaking in-sample information |
+| K2 | Weekly short-term reversal earns net alpha in large caps | **REJECT** | Cost model not wired into the P&L — the costs alone are ~9.6%/yr |
+| K3 | Long-only 12-1 momentum earns >1%/yr alpha in large caps | REJECT / trivial | Point-in-time constituent handling; survivorship bias inflates this one dramatically |
+
+Validate the instrument before trusting the measurement.
+
+---
+
+## What the harness cannot do
+
+At a true Sharpe of 0.5 — a *good* outcome — reaching t = 2 takes ~18 years of
+live data, and ~46 years once corrected for 50 trials tested (Lo, 2002).
+
+**So this harness can only ever reject a strategy, never confirm one.** That is
+still worth building: false positives are the documented failure mode, and
+rejection is what protects against them. But absence of rejection is not
+confirmation, and the decision to risk money has to rest on economic mechanism —
+*why does this money exist, who is on the other side, and why can't they stop?* —
+which no amount of backtesting can answer.
